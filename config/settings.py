@@ -35,7 +35,10 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    env('DOMAIN'),
+]
 
 
 # Application definition
@@ -156,7 +159,7 @@ REST_FRAMEWORK = {
 
 # Configuración de CORS
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React Frontend
+    env('CORS_ALLOWED_ORIGINS'),  # React Frontend
 ]
 
 # Configuración JWT
